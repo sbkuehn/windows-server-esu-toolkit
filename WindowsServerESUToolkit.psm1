@@ -2,11 +2,11 @@
 <#
     WindowsServerESUToolkit.psm1
     Loads all public functions for the module. Keep this file dumb on purpose,
-    logic belongs in the individual function files under src/Public so each
+    logic belongs in the individual function files under src/ so each
     one stays independently testable.
 #>
 
-$publicFunctionPath = Join-Path -Path $PSScriptRoot -ChildPath 'src\Public'
+$publicFunctionPath = Join-Path -Path $PSScriptRoot -ChildPath 'src'
 
 if (Test-Path -Path $publicFunctionPath) {
     $publicFunctions = Get-ChildItem -Path $publicFunctionPath -Filter '*.ps1' -File -ErrorAction SilentlyContinue
